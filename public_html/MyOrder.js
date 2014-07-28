@@ -18,12 +18,12 @@ var MyOrderController = myOrder.controller('MyOrderController', function() {
                 return localStorage.getItem(key);
             },
             set: function(value) {
-                localStorage.setItem(key, value);
+                localStorage.setItem(key, value === undefined ? '' : value);
             }
         });
     }
     this.instructions = new remember('instructionsVisible', true);
     this.favourites = new remember('favouritesVisible', true);
     this.stomaApplianceScheme = new remember('stomaApplianceSchemeVisible', true);
-    this.myOrderName = new remember('myOrderName', 'Shaun')
+    this.myOrderName = new remember('myOrderName', '')
 });
