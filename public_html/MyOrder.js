@@ -1,12 +1,11 @@
 var myOrder = angular.module('myOrder', []);
 var MyOrderController = myOrder.controller('MyOrderController', function() {
     
-    function rememberShowHide(key, defaultValue) {
+    function remember(key, defaultValue) {
         if (localStorage.getItem(key) === null) {
             localStorage.setItem(key, defaultValue);
         }
-        
-        Object.defineProperty(this, 'visible', {
+        Object.defineProperty(this, 'boolean', {
             get: function() {
                 return localStorage.getItem(key) === 'true';
             },
@@ -14,8 +13,17 @@ var MyOrderController = myOrder.controller('MyOrderController', function() {
                 localStorage.setItem(key, value ? 'true' : 'false');
             }
         });
+        Object.defineProperty(this, 'text', {
+            get: function() {
+                return localStorage.getItem(key);
+            },
+            set: function(value) {
+                localStorage.setItem(key, value);
+            }
+        });
     }
-    this.instructions = new rememberShowHide('instructionsVisible', true);
-    this.favourites = new rememberShowHide('favouritesVisible', true);
-    this.stomaApplianceScheme = new rememberShowHide('stomaApplianceSchemeVisible', true);
+    this.instructions = new remember('instructionsVisible', true);
+    this.favourites = new remember('favouritesVisible', true);
+    this.stomaApplianceScheme = new remember('stomaApplianceSchemeVisible', true);
+    this.myOrderName = new remember('myOrderName', 'Shaun')
 });
