@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-AU" ng-app="myOrder" ng-controller="MyOrderController as moc">
+<html lang="en-AU" ng-app="myOrder" ng-controller="MyOrderController as my">
     <head>
         <meta charset="utf-8" />
         <link href="myOrder.css" rel="stylesheet" type="text/css"/>
@@ -21,9 +21,9 @@
             <p>Please email me at <strong id="docercetriiond"></strong> with any comments.</p>
         </div>                      
         <h2 id="instructionsHeader">
-            Instructions<span id="instructionsToggle" ng-click="moc.instructions.visible = !moc.instructions.visible">{{moc.instructions.visible ? 'Hide' : 'Show'}}</span>
+            Instructions<span id="instructionsToggle" ng-click="my.remember(my, 'instructionsVisible', !my.instructionsVisible)">{{my.instructionsVisible ? "Hide" : "Show"}}</span>
         </h2>
-        <div id="instructionsContent" ng-show="moc.instructions.visible">
+        <div id="instructionsContent" ng-show="my.instructionsVisible">
             <p>
                 This web site allows you to create an order for supplies from the Stoma Appliance Scheme that you email to your ostomy association.
             </p>
@@ -67,7 +67,7 @@
                         <label>Email</label>
                     </div>
                     <div class="detailsColumn2">
-                        <input id="name" type="text" size="35" tabindex=1 ng-model="moc.myOrderName.text" name="name">
+                        <input id="name" type="text" size="35" tabindex=1 ng-model="my.myOrderName.text" name="name">
                         <span id="nameError" ng-show="myOrderForm.name.$error.required">Required</span>
                         <input id="email" type="text" size="35" name="email" maxlength="50" tabindex=3>
                         <span id="emailError"></span>
@@ -107,9 +107,9 @@
             </form>
         </div>
         <h2 id="favouritesHeader">
-            Favourites<span id="favouritesToggle" ng-click="moc.favourites.visible = !moc.favourites.visible">{{moc.favourites.visible ? 'Hide' : 'Show'}}</span>
+            Favourites<span id="favouritesToggle" ng-click="my.remember(my, 'favouritesVisible', !my.favouritesVisible)">{{my.favouritesVisible ? 'Hide' : 'Show'}}</span>
         </h2>
-        <div id="favouritesContent" ng-show="moc.favourites.visible">
+        <div id="favouritesContent" ng-show="my.favouritesVisible">
             <table>
                 <thead>
                     <tr>
@@ -127,9 +127,9 @@
             </table>
         </div>
         <h2 id="sasSchemeHeader">
-            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="moc.stomaApplianceScheme.visible = !moc.stomaApplianceScheme.visible">{{moc.stomaApplianceScheme.visible ? 'Hide' : 'Show'}}</span>
+            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="my.remember(my, 'stomaApplianceSchemeVisible', !my.stomaApplianceSchemeVisible)">{{my.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
         </h2>
-        <div id="sasSchemeContent" ng-show="moc.stomaApplianceScheme.visible">
+        <div id="sasSchemeContent" ng-show="my.stomaApplianceSchemeVisible">
             <fieldset id="filters">
                 <legend>Filters</legend>
             </fieldset>
