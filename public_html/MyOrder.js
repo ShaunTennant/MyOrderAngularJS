@@ -5,9 +5,6 @@ var MyOrderController = myOrder.controller('MyOrderController', function() {
         localStorage.setItem(propertyName, value);
     };
 
-    localStorage.removeItem('instructionsVisible');
-    localStorage.removeItem('favouritesVisible');
-    localStorage.removeItem('stomaApplianceSchemeVisible');
     this.instructionsVisible = localStorage.getItem('instructionsVisible') === null ? true : localStorage.getItem('instructionsVisible') === 'true';
     this.favouritesVisible = localStorage.getItem('favouritesVisible') === null ? true : localStorage.getItem('favouritesVisible') === 'true';
     this.stomaApplianceSchemeVisible = localStorage.getItem('stomaApplianceSchemeVisible') === null ? true : localStorage.getItem('stomaApplianceSchemeVisible') === 'true';
