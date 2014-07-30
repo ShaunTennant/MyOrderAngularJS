@@ -289,14 +289,24 @@ legend {
 }
 
 input[type="text"] {
-    /*    border: 1px solid #67b7ff;*/
+    border: 1px solid #67b7ff;
     padding: 2px;
     cursor: text;
 }
 
-#myOrderContent input[type="text"] {
+input[type="email"] {
     border: 1px solid #67b7ff;
+    padding: 2px;
+    cursor: text;
 }
+
+/*#myOrderContent input[type="text"] {
+    border: 1px solid #67b7ff;
+}*/
+
+/*#myOrderContent input[type="email"] {
+    border: 1px solid #67b7ff;
+}*/
 
 #myOrderContent textarea {
     border: 1px solid #67b7ff;
@@ -330,14 +340,6 @@ input[type="button"] {
 .unselectable {
     -moz-user-select: none;
     -webkit-user-select: none;
-}
-
-#myOrderName {
-    margin-left: 5px;
-}
-
-#myOrderMemberNumber {
-    margin-left: 50px;
 }
 
 #details {
