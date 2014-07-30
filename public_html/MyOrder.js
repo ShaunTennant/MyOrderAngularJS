@@ -1,29 +1,37 @@
 var myOrder = angular.module('myOrder', []);
 var MyOrderController = myOrder.controller('MyOrderController', function() {
-    
-    function remember(key, defaultValue) {
-        if (localStorage.getItem(key) === null) {
-            localStorage.setItem(key, defaultValue);
+
+    function rememberBoolean(propertyName, localStorageKey, defaultValue) {
+        if (localStorage.getItem(localStorageKey) === null) {
+            localStorage.setItem(localStorageKey, defaultValue);
         }
-        Object.defineProperty(this, 'boolean', {
+        Object.defineProperty(this, propertyName, {
             get: function() {
-                return localStorage.getItem(key) === 'true';
+                return localStorage.getItem(localStorageKey) === 'true';
             },
             set: function(value) {
-                localStorage.setItem(key, value ? 'true' : 'false');
-            }
-        });
-        Object.defineProperty(this, 'text', {
-            get: function() {
-                return localStorage.getItem(key);
-            },
-            set: function(value) {
-                localStorage.setItem(key, value === undefined ? '' : value);
+                localStorage.setItem(localStorageKey, value ? 'true' : 'false');
             }
         });
     }
-    this.instructions = new remember('instructionsVisible', true);
-    this.favourites = new remember('favouritesVisible', true);
-    this.stomaApplianceScheme = new remember('stomaApplianceSchemeVisible', true);
-    this.myOrderName = new remember('myOrderName', '')
+    function rememberString(propertyName, localStorageKey, defaultValue) {
+        if (localStorage.getItem(localStorageKey) === null) {
+            localStorage.setItem(localStorageKey, defaultValue);
+        }
+        Object.defineProperty(this, propertyName, {
+            get: function() {
+                return localStorage.getItem(localStorageKey);
+            },
+            set: function(value) {
+                if (value !== undefined) {
+                    localStorage.setItem(localStorageKey, value === undefined ? '' : value);
+                }
+            }
+        });
+    }
+    this.instructions = new rememberBoolean('visible', 'instructionsVisible', true);
+    this.favourites = new rememberBoolean('visible', 'favouritesVisible', true);
+    this.stomaApplianceScheme = new rememberBoolean('visible', 'stomaApplianceSchemeVisible', true);
+    this.myOrderName = new rememberString('text', 'myOrderName', '');
+    this.test = '12345';
 });

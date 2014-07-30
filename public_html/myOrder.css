@@ -395,7 +395,8 @@ textarea {
 
 #nameError, #emailError, #memberNumberError, #ostomysEmailError, #commentError {
     color: red;
-    font-size: 80%;
+    font-size: 8pt;
+    line-height: 28px;
 }
 
 #commentError {

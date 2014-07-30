@@ -21,9 +21,9 @@
             <p>Please email me at <strong id="docercetriiond"></strong> with any comments.</p>
         </div>                      
         <h2 id="instructionsHeader">
-            Instructions<span id="instructionsToggle" ng-click="moc.instructions.boolean = !moc.instructions.boolean">{{moc.instructions.boolean ? 'Hide' : 'Show'}}</span>
+            Instructions<span id="instructionsToggle" ng-click="moc.instructions.visible = !moc.instructions.visible">{{moc.instructions.visible ? 'Hide' : 'Show'}}</span>
         </h2>
-        <div id="instructionsContent" ng-show="moc.instructions.boolean">
+        <div id="instructionsContent" ng-show="moc.instructions.visible">
             <p>
                 This web site allows you to create an order for supplies from the Stoma Appliance Scheme that you email to your ostomy association.
             </p>
@@ -67,9 +67,9 @@
                         <label>Email</label>
                     </div>
                     <div class="detailsColumn2">
-                        <input id="name" type="text" size="35" tabindex=1 ng-model="moc.myOrderName.text" name="name" required ng-maxlength="50">
+                        <input id="name" type="text" size="35" tabindex=1 ng-model="moc.myOrderName.text" name="name">
                         <span id="nameError" ng-show="myOrderForm.name.$error.required">Required</span>
-                        <input id="email" type="text" name="email" size="35" maxlength="50" tabindex=3>
+                        <input id="email" type="text" size="35" name="email" maxlength="50" tabindex=3>
                         <span id="emailError"></span>
                     </div>
                     <div class="detailsColumn3">
@@ -107,9 +107,9 @@
             </form>
         </div>
         <h2 id="favouritesHeader">
-            Favourites<span id="favouritesToggle" ng-click="moc.favourites.boolean = !moc.favourites.boolean">{{moc.favourites.boolean ? 'Hide' : 'Show'}}</span>
+            Favourites<span id="favouritesToggle" ng-click="moc.favourites.visible = !moc.favourites.visible">{{moc.favourites.visible ? 'Hide' : 'Show'}}</span>
         </h2>
-        <div id="favouritesContent" ng-show="moc.favourites.boolean">
+        <div id="favouritesContent" ng-show="moc.favourites.visible">
             <table>
                 <thead>
                     <tr>
@@ -127,9 +127,9 @@
             </table>
         </div>
         <h2 id="sasSchemeHeader">
-            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="moc.stomaApplianceScheme.boolean = !moc.stomaApplianceScheme.boolean">{{moc.stomaApplianceScheme.boolean ? 'Hide' : 'Show'}}</span>
+            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="moc.stomaApplianceScheme.visible = !moc.stomaApplianceScheme.visible">{{moc.stomaApplianceScheme.visible ? 'Hide' : 'Show'}}</span>
         </h2>
-        <div id="sasSchemeContent" ng-show="moc.stomaApplianceScheme.boolean">
+        <div id="sasSchemeContent" ng-show="moc.stomaApplianceScheme.visible">
             <fieldset id="filters">
                 <legend>Filters</legend>
             </fieldset>
