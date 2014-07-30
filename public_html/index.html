@@ -21,7 +21,7 @@
             <p>Please email me at <strong id="docercetriiond"></strong> with any comments.</p>
         </div>                      
         <h2 id="instructionsHeader">
-            Instructions<span id="instructionsToggle" ng-click="my.remember(my, 'instructionsVisible', !my.instructionsVisible)">{{my.instructionsVisible ? "Hide" : "Show"}}</span>
+            Instructions<span id="instructionsToggle" ng-click="my.remember('instructionsVisible', !my.instructionsVisible)">{{my.instructionsVisible ? "Hide" : "Show"}}</span>
         </h2>
         <div id="instructionsContent" ng-show="my.instructionsVisible">
             <p>
@@ -67,7 +67,7 @@
                         <label>Email</label>
                     </div>
                     <div class="detailsColumn2">
-                        <input id="name" type="text" size="35" tabindex=1 ng-model="my.myOrderName.text" name="name">
+                        <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="my.myOrderName" ng-change="my.remember('myOrderName', my.myOrderName)">
                         <span id="nameError" ng-show="myOrderForm.name.$error.required">Required</span>
                         <input id="email" type="text" size="35" name="email" maxlength="50" tabindex=3>
                         <span id="emailError"></span>
@@ -107,7 +107,7 @@
             </form>
         </div>
         <h2 id="favouritesHeader">
-            Favourites<span id="favouritesToggle" ng-click="my.remember(my, 'favouritesVisible', !my.favouritesVisible)">{{my.favouritesVisible ? 'Hide' : 'Show'}}</span>
+            Favourites<span id="favouritesToggle" ng-click="my.remember('favouritesVisible', !my.favouritesVisible)">{{my.favouritesVisible ? 'Hide' : 'Show'}}</span>
         </h2>
         <div id="favouritesContent" ng-show="my.favouritesVisible">
             <table>
@@ -127,7 +127,7 @@
             </table>
         </div>
         <h2 id="sasSchemeHeader">
-            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="my.remember(my, 'stomaApplianceSchemeVisible', !my.stomaApplianceSchemeVisible)">{{my.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
+            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="my.remember('stomaApplianceSchemeVisible', !my.stomaApplianceSchemeVisible)">{{my.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
         </h2>
         <div id="sasSchemeContent" ng-show="my.stomaApplianceSchemeVisible">
             <fieldset id="filters">

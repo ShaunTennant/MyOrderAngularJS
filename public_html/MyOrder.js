@@ -1,7 +1,7 @@
 var myOrder = angular.module('myOrder', []);
 var MyOrderController = myOrder.controller('MyOrderController', function() {
-    this.remember = function(obj, propertyName, value) {
-        obj[propertyName] = value;
+    this.remember = function(propertyName, value) {
+        this[propertyName] = value;
         localStorage.setItem(propertyName, value);
     };
 
@@ -9,5 +9,5 @@ var MyOrderController = myOrder.controller('MyOrderController', function() {
     this.favouritesVisible = localStorage.getItem('favouritesVisible') === null ? true : localStorage.getItem('favouritesVisible') === 'true';
     this.stomaApplianceSchemeVisible = localStorage.getItem('stomaApplianceSchemeVisible') === null ? true : localStorage.getItem('stomaApplianceSchemeVisible') === 'true';
 
-//    this.myOrderName = new rememberString('text', 'myOrderName', '');
+    this.myOrderName = localStorage.getItem('myOrderName') === null ? '' : localStorage.getItem('myOrderName');
 });
