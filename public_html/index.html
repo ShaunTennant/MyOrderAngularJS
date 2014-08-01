@@ -67,13 +67,13 @@
                         <label>Email</label>
                     </div>
                     <div class="detailsColumn2">
-                        <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="my.myOrderName" ng-change="my.remember('myOrderName', my.myOrderName)" required validity-bind-fix ng-maxlength="64">
+                        <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="my.myOrderName" ng-change="my.remember('myOrderName', my.myOrderName)" required validity-bind-fix ng-maxlength="3">
                         <span id="nameError" ng-show="my.myOrderName === ''">Required</span>
                         <span id="nameError" ng-show="myOrderForm.name.$error.maxlength">Too long</span><br />
-                        <input id="email" type="email" size="35" tabindex=3 name="email" ng-model="my.myOrderEmail" ng-change="my.remember('myOrderEmail', my.myOrderEmail)" required validity-bind-fix ng-maxlength="128"">
+                        <input id="email" type="email" size="35" tabindex=3 name="email" ng-model="my.myOrderEmail" ng-change="my.remember('myOrderEmail', my.myOrderEmail)" required validity-bind-fix ng-maxlength="128">
                         <span id="emailError" ng-show="my.myOrderEmail === ''">Required</span>
                         <span id="emailError" ng-show="myOrderForm.email.$error.maxlength">Too long</span>
-                        <span id="emailError" ng-show="myOrderForm.email.$error.email">Email address incorrect</span><br />
+                        <span id="emailError" ng-show="myOrderForm.email.$error.email">Error in email address</span><br />
                     </div>
                     <div class="detailsColumn3">
                         <label>Member Number</label>
@@ -86,7 +86,7 @@
                         <input id="ostomysEmail" type="email" size="35" tabindex=4 name="ostomysEmail" ng-model="my.myOrderOstomysEmail" ng-change="my.remember('myOrderOstomysEmail', my.myOrderOstomysEmail)" required validity-bind-fix ng-maxlength="128">
                         <span id="ostomysEmailError" ng-show="my.myOrderOstomysEmail === ''">Required</span>
                         <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.maxlength">Too long</span>
-                        <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.email">Email address incorrect</span><br />
+                        <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.email">Error in email address</span><br />
                     </div>
                 </fieldset>
                 <table>
