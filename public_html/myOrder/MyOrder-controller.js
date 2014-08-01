@@ -1,7 +1,6 @@
 /*global angular, localStorage */
 
-var myOrder = angular.module('myOrder', ['validityBindFix']);
-var MyOrderController = myOrder.controller('MyOrderController', [function () {
+var myOrderController = ostomyNetAu.controller('MyOrderController', [function () {
         'use strict';
         this.remember = function (propertyName, value) {
             this[propertyName] = value === undefined ? '' : value;

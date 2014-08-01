@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-AU" ng-app="myOrderWebsite">
+<html lang="en-AU" ng-app="ostomyNetAu">
     <head>
         <meta charset="utf-8" />
         <link href="myOrder.css" rel="stylesheet" type="text/css"/>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-        <script src="ostomyNetAu.js" type="text/javascript"></script>
-        <script src="instructions/instructions.js" type="text/javascript"></script>
-        <script src="myOrder/MyOrder.js" type="text/javascript"></script>
-        <script src="favourites/favourites.js" type="text/javascript"></script>
-        <script src="stomaApplianceScheme/stomaApplianceScheme.js" type="text/javascript"></script>
-        <script src="components/validityBindFix-directive.js" type="text/javascript"></script>
+         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+         <script src="ostomyNetAu.js" type="text/javascript"></script>
+         <script src="instructions/instructions-controller.js" type="text/javascript"></script>
         <title>www.ostomy.net.au</title>
     </head>
     <body>
@@ -24,43 +20,46 @@
                 <li>Updated underlying Stoma Appliance Scheme database to refect 1st July 2013 product deletions, additions and changes.</li>
             </ul>
             <p>Please email me at <strong id="docercetriiond"></strong> with any comments.</p>
-        </div>                      
-        <h2 id="instructionsHeader">
-            Instructions<span id="instructionsToggle" ng-click="my.remember('instructionsVisible', !my.instructionsVisible)">{{my.instructionsVisible ? "Hide" : "Show"}}</span>
-        </h2>
-        <div id="instructionsContent" ng-show="my.instructionsVisible">
-            <p>
-                This web site allows you to create an order for supplies from the Stoma Appliance Scheme that you email to your ostomy association.
-            </p>
-            <h3>
-                Five easy steps
-            </h3>
-            <ol style="list-style-type:decimal">
-                <li>Type in your name, member number, email and ostomy society's email.</li>
-                <li>Click on the items you need from the Favourites or Stoma Appliance Scheme lists.</li>
-                <li>Click on each item in My Order to set the quantity you want.</li>
-                <li>Optionally add any comments.</li>
-                <li>Click on <strong>Send Email</strong> to create and send your email order to both the <strong>Ostomy's Email</strong> and your <strong>Email</strong> address.</li>
-            </ol>
-            <h3>
-                Tips & Notes
-            </h3>
-            <ul style="list-style-type:disc">
-                <li>To <em><strong>try it out</strong></em> just set Ostomy's Email to your own Email address so you receive both emails.</li>
-                <li>Use the Hide/Show feature on the right-hand side to conceal or reveal these instructions and other sections.</li>
-                <li>To reduce the quantity of a My Order item hold the <strong>shift key</strong> down while clicking on the item.</li>
-                <li>When you have a <em><strong>medical certificate</strong></em> hold the <strong>control key</strong> down while clicking on an item for quantities greater than the allowance.</li>
-                <li>Clicking on the red 'remove' that appears when the pointer is over an item deletes only that item.</li>
-                <li>Favourites, for faster selection next visit, are automatically created when you click on a Stoma Appliance Scheme item.</li>
-                <li>All product codes consist <em><strong>only</strong></em> of letters and/or numbers, having had all other characters e.g. - . / etc. and leading zeros removed.</li>
-                <li>Find searches <em><strong>all</strong></em> items, is not case-sensitive, and will match any code/description that contains the search term<br />
-                    e.g. 123 will match 1235, 401235, MDAP12301 etc.</li>
-                <li><em><strong>No</strong></em> personal information is kept by this web site.</li>
-                <li>Your name, member number, email, ostomy societies email and favourites are stored by your browser so if you go to use another computer or browser you have to redo these settings.</li>
-                <li>Your ostomy association is responsible for compliance with the terms and quantities permitted by the Stoma Appliance Scheme e.g product groups/subgroups, restrictions etc.</li>
-            </ul>
         </div>
-        <h2 id="myOrderHeader">
+        <div ng-controller="InstructionsController as ic">
+            <h2 id="instructionsHeader">
+                Instructions<span id="instructionsToggle" ng-click="ic.remember('instructionsVisible', !ic.instructionsVisible)">{{ic.instructionsVisible ? "Hide" : "Show"}}</span>
+            </h2>
+            <div id="instructionsContent" ng-show="ic.instructionsVisible">
+                <p>
+                    This web site allows you to create an order for supplies from the Stoma Appliance Scheme that you email to your ostomy association.
+                </p>
+                <h3>
+                    Five easy steps
+                </h3>
+                <ol style="list-style-type:decimal">
+                    <li>Type in your name, member number, email and ostomy society's email.</li>
+                    <li>Click on the items you need from the Favourites or Stoma Appliance Scheme lists.</li>
+                    <li>Click on each item in My Order to set the quantity you want.</li>
+                    <li>Optionally add any comments.</li>
+                    <li>Click on <strong>Send Email</strong> to create and send your email order to both the <strong>Ostomy's Email</strong> and your <strong>Email</strong> address.</li>
+                </ol>
+                <h3>
+                    Tips & Notes
+                </h3>
+                <ul style="list-style-type:disc">
+                    <li>To <em><strong>try it out</strong></em> just set Ostomy's Email to your own Email address so you receive both emails.</li>
+                    <li>Use the Hide/Show feature on the right-hand side to conceal or reveal these instructions and other sections.</li>
+                    <li>To reduce the quantity of a My Order item hold the <strong>shift key</strong> down while clicking on the item.</li>
+                    <li>When you have a <em><strong>medical certificate</strong></em> hold the <strong>control key</strong> down while clicking on an item for quantities greater than the allowance.</li>
+                    <li>Clicking on the red 'remove' that appears when the pointer is over an item deletes only that item.</li>
+                    <li>Favourites, for faster selection next visit, are automatically created when you click on a Stoma Appliance Scheme item.</li>
+                    <li>All product codes consist <em><strong>only</strong></em> of letters and/or numbers, having had all other characters e.g. - . / etc. and leading zeros removed.</li>
+                    <li>Find searches <em><strong>all</strong></em> items, is not case-sensitive, and will match any code/description that contains the search term<br />
+                        e.g. 123 will match 1235, 401235, MDAP12301 etc.</li>
+                    <li><em><strong>No</strong></em> personal information is kept by this web site.</li>
+                    <li>Your name, member number, email, ostomy societies email and favourites are stored by your browser so if you go to use another computer or browser you have to redo these settings.</li>
+                    <li>Your ostomy association is responsible for compliance with the terms and quantities permitted by the Stoma Appliance Scheme e.g product groups/subgroups, restrictions etc.</li>
+                </ul>
+            </div>
+        </div>
+<!--
+<h2 id="myOrderHeader">
             My Order
         </h2>
         <div id="myOrderContent" ng-controller="MyOrderController as my">
@@ -166,5 +165,6 @@
         <div id="mastFoot">
             &copy; 2010 Dr Shaun Tennant
         </div>
-    </body>
+-->
+</body>
 </html>
