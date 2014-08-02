@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <link href="myOrder.css" rel="stylesheet" type="text/css"/>
-         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-         <script src="ostomyNetAu.js" type="text/javascript"></script>
-         <script src="instructions/instructions-controller.js" type="text/javascript"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+        <script src="ostomyNetAu.js" type="text/javascript"></script>
+        <script src="instructions/instructions-controller.js" type="text/javascript"></script>
+        <script src="favourites/favourites-controller.js" type="text/javascript"></script>
+        <script src="stomaApplianceScheme/stomaApplianceScheme-controller.js" type="text/javascript"></script>
         <title>www.ostomy.net.au</title>
     </head>
     <body>
@@ -58,113 +60,117 @@
                 </ul>
             </div>
         </div>
-<!--
-<h2 id="myOrderHeader">
-            My Order
-        </h2>
-        <div id="myOrderContent" ng-controller="MyOrderController as my">
-            <form action="sendEmail.php" method="post" name="myOrderForm"  id="myOrderForm">
-                <fieldset id="details">
-                    <legend>Details</legend>
-                    <div class="detailsColumn1">
-                        <label>Name</label>
-                        <label>Email</label>
-                    </div>
-                    <div class="detailsColumn2">
-                        <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="my.myOrderName" ng-change="my.remember('myOrderName', my.myOrderName)" required validity-bind-fix ng-maxlength="3">
-                        <span id="nameError" ng-show="my.myOrderName === ''">Required</span>
-                        <span id="nameError" ng-show="myOrderForm.name.$error.maxlength">Too long</span><br />
-                        <input id="email" type="email" size="35" tabindex=3 name="email" ng-model="my.myOrderEmail" ng-change="my.remember('myOrderEmail', my.myOrderEmail)" required validity-bind-fix ng-maxlength="128">
-                        <span id="emailError" ng-show="my.myOrderEmail === ''">Required</span>
-                        <span id="emailError" ng-show="myOrderForm.email.$error.maxlength">Too long</span>
-                        <span id="emailError" ng-show="myOrderForm.email.$error.email">Error in email address</span><br />
-                    </div>
-                    <div class="detailsColumn3">
-                        <label>Member Number</label>
-                        <label>Ostomy's Email</label>
-                    </div>
-                    <div class="detailsColumn4">
-                        <input id="memberNumber" type="text" size="10" tabindex=2 name="memberNumber" ng-model="my.myOrderMemberNumber" ng-change="my.remember('myOrderMemberNumber', my.myOrderMemberNumber)" required validity-bind-fix ng-maxlength="16">
-                        <span id="memberNumberError" ng-show="my.myOrderMemberNumber === ''">Required</span>
-                        <span id="memberNumberError" ng-show="myOrderForm.memberNumber.$error.maxlength">Too long</span><br />
-                        <input id="ostomysEmail" type="email" size="35" tabindex=4 name="ostomysEmail" ng-model="my.myOrderOstomysEmail" ng-change="my.remember('myOrderOstomysEmail', my.myOrderOstomysEmail)" required validity-bind-fix ng-maxlength="128">
-                        <span id="ostomysEmailError" ng-show="my.myOrderOstomysEmail === ''">Required</span>
-                        <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.maxlength">Too long</span>
-                        <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.email">Error in email address</span><br />
-                    </div>
-                </fieldset>
+        <!--
+        <h2 id="myOrderHeader">
+                    My Order
+                </h2>
+                <div id="myOrderContent" ng-controller="MyOrderController as my">
+                    <form action="sendEmail.php" method="post" name="myOrderForm"  id="myOrderForm">
+                        <fieldset id="details">
+                            <legend>Details</legend>
+                            <div class="detailsColumn1">
+                                <label>Name</label>
+                                <label>Email</label>
+                            </div>
+                            <div class="detailsColumn2">
+                                <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="my.myOrderName" ng-change="my.remember('myOrderName', my.myOrderName)" required validity-bind-fix ng-maxlength="3">
+                                <span id="nameError" ng-show="my.myOrderName === ''">Required</span>
+                                <span id="nameError" ng-show="myOrderForm.name.$error.maxlength">Too long</span><br />
+                                <input id="email" type="email" size="35" tabindex=3 name="email" ng-model="my.myOrderEmail" ng-change="my.remember('myOrderEmail', my.myOrderEmail)" required validity-bind-fix ng-maxlength="128">
+                                <span id="emailError" ng-show="my.myOrderEmail === ''">Required</span>
+                                <span id="emailError" ng-show="myOrderForm.email.$error.maxlength">Too long</span>
+                                <span id="emailError" ng-show="myOrderForm.email.$error.email">Error in email address</span><br />
+                            </div>
+                            <div class="detailsColumn3">
+                                <label>Member Number</label>
+                                <label>Ostomy's Email</label>
+                            </div>
+                            <div class="detailsColumn4">
+                                <input id="memberNumber" type="text" size="10" tabindex=2 name="memberNumber" ng-model="my.myOrderMemberNumber" ng-change="my.remember('myOrderMemberNumber', my.myOrderMemberNumber)" required validity-bind-fix ng-maxlength="16">
+                                <span id="memberNumberError" ng-show="my.myOrderMemberNumber === ''">Required</span>
+                                <span id="memberNumberError" ng-show="myOrderForm.memberNumber.$error.maxlength">Too long</span><br />
+                                <input id="ostomysEmail" type="email" size="35" tabindex=4 name="ostomysEmail" ng-model="my.myOrderOstomysEmail" ng-change="my.remember('myOrderOstomysEmail', my.myOrderOstomysEmail)" required validity-bind-fix ng-maxlength="128">
+                                <span id="ostomysEmailError" ng-show="my.myOrderOstomysEmail === ''">Required</span>
+                                <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.maxlength">Too long</span>
+                                <span id="ostomysEmailError" ng-show="myOrderForm.ostomysEmail.$error.email">Error in email address</span><br />
+                            </div>
+                        </fieldset>
+                        <table>
+                            <thead id="myOrderTableHeader" style="display: none;">
+                                <tr>
+                                    <th class="c" >Code</th>
+                                    <th class="m">Manuf.</th>
+                                    <th class="d">Description</th>
+                                    <th class="l">Allowance</th>
+                                    <th class="n">Quantity</th>
+                                    <th class="t">Units</th>
+                                    <th class="r"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="myOrderRows" class="unselectable">
+                            </tbody>
+                        </table>
+                        <div id="comment" style="display: none;">
+                            Comments<span id="commentError"></span>
+                            <textarea id="commentText" name="comment" tabindex=5></textarea>
+                        </div>
+                        <div id="commentToggle">
+                            Add Comment
+                        </div>
+                        <div id="sendEmail"><input id="sendEmailButton" type="button" name="sendEmail" value="Send Email" tabindex=6></div>
+                    </form>
+                </div>
+        -->
+        <div ng-controller="FavouritesController as fc">
+            <h2 id="favouritesHeader">
+                Favourites<span id="favouritesToggle" ng-click="fc.remember('favouritesVisible', !fc.favouritesVisible)">{{fc.favouritesVisible ? 'Hide' : 'Show'}}</span>
+            </h2>
+            <div id="favouritesContent" ng-show="fc.favouritesVisible">
                 <table>
-                    <thead id="myOrderTableHeader" style="display: none;">
+                    <thead>
                         <tr>
                             <th class="c" >Code</th>
                             <th class="m">Manuf.</th>
                             <th class="d">Description</th>
                             <th class="l">Allowance</th>
-                            <th class="n">Quantity</th>
+                            <th class="n"></th>
                             <th class="t">Units</th>
                             <th class="r"></th>
                         </tr>
                     </thead>
-                    <tbody id="myOrderRows" class="unselectable">
+                    <tbody id="favouritesRows" class="unselectable">
                     </tbody>
                 </table>
-                <div id="comment" style="display: none;">
-                    Comments<span id="commentError"></span>
-                    <textarea id="commentText" name="comment" tabindex=5></textarea>
-                </div>
-                <div id="commentToggle">
-                    Add Comment
-                </div>
-                <div id="sendEmail"><input id="sendEmailButton" type="button" name="sendEmail" value="Send Email" tabindex=6></div>
-            </form>
+            </div>
         </div>
-        <h2 id="favouritesHeader">
-            Favourites<span id="favouritesToggle" ng-click="my.remember('favouritesVisible', !my.favouritesVisible)">{{my.favouritesVisible ? 'Hide' : 'Show'}}</span>
-        </h2>
-        <div id="favouritesContent" ng-show="my.favouritesVisible">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="c" >Code</th>
-                        <th class="m">Manuf.</th>
-                        <th class="d">Description</th>
-                        <th class="l">Allowance</th>
-                        <th class="n"></th>
-                        <th class="t">Units</th>
-                        <th class="r"></th>
-                    </tr>
-                </thead>
-                <tbody id="favouritesRows" class="unselectable">
-                </tbody>
-            </table>
-        </div>
-        <h2 id="sasSchemeHeader">
-            Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="my.remember('stomaApplianceSchemeVisible', !my.stomaApplianceSchemeVisible)">{{my.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
-        </h2>
-        <div id="sasSchemeContent" ng-show="my.stomaApplianceSchemeVisible">
-            <fieldset id="filters">
-                <legend>Filters</legend>
-            </fieldset>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="c">Code</th>
-                        <th class="m">Manuf.</th>
-                        <th class="d">Description</th>
-                        <th class="l">Allowance</th>
-                        <th class="n"></th>
-                        <th class="t">Units</th>
-                        <th class="r"></th>
-                    </tr>
-                </thead>
-                <tbody id="sasSchemeRows">
-                </tbody>
-            </table>
-            <p><br />* Scheme shows 'pack of' but ordered as 'each'.<br />^ Scheme's maximum allowance not divisible by pack size therefore allowance rounded down to nearest whole number.
+        <div ng-controller="StomaApplianceSchemeController as sc">
+            <h2 id="sasSchemeHeader">
+                Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="sc.remember('stomaApplianceSchemeVisible', !sc.stomaApplianceSchemeVisible)">{{sc.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
+            </h2>
+            <div id="sasSchemeContent" ng-show="sc.stomaApplianceSchemeVisible">
+                <fieldset id="filters">
+                    <legend>Filters</legend>
+                </fieldset>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="c">Code</th>
+                            <th class="m">Manuf.</th>
+                            <th class="d">Description</th>
+                            <th class="l">Allowance</th>
+                            <th class="n"></th>
+                            <th class="t">Units</th>
+                            <th class="r"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="sasSchemeRows">
+                    </tbody>
+                </table>
+                <p><br />* Scheme shows 'pack of' but ordered as 'each'.<br />^ Scheme's maximum allowance not divisible by pack size therefore allowance rounded down to nearest whole number.
+            </div>
         </div>
         <div id="mastFoot">
             &copy; 2010 Dr Shaun Tennant
         </div>
--->
-</body>
+    </body>
 </html>
