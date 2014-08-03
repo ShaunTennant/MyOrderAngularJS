@@ -3,7 +3,6 @@
 angular.module('instructionsController', [])
     .controller('InstructionsController', [function () {
         'use strict';
-
         //Default(s)
         if (localStorage.getItem('instructionsVisible') === null) {
             localStorage.setItem('instructionsVisible', 'true');

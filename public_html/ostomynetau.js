@@ -1,3 +1,3 @@
 /*global angular */
 angular.module('ostomyNetAu', [
-    'instructionsController', 'favouritesController', 'stomaApplianceSchemeController']);
+    'instructionsController', 'favouritesController', 'stomaApplianceSchemeController', 'myOrderController']);

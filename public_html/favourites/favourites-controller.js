@@ -3,7 +3,6 @@
 angular.module('favouritesController', [])
     .controller('FavouritesController', [function () {
         'use strict';
-
         //Defaults
         if (localStorage.getItem('favouritesVisible') === null) {
             localStorage.setItem('favouritesVisible', 'true');
