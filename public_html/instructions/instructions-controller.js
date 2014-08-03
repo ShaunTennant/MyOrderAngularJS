@@ -12,5 +12,4 @@ angular.module('instructionsController', ['rememberService'])
             localStorage.setItem('instructionsVisible', 'true');
         }
         this.instructionsVisible = localStorage.getItem('instructionsVisible') === 'true';
-        this.genusText = remember.genus;
     }]);
