@@ -4,7 +4,7 @@ var favouritesController = angular.module('favouritesController', [])
     .controller('FavouritesController', [function () {
         'use strict';
         this.remember = function (propertyName, value) {
-            this[propertyName] = value === undefined ? '' : value;
+            this[propertyName] = value;
             localStorage.setItem(propertyName, this[propertyName]);
         };
 

@@ -1,11 +1,10 @@
-/*global angular, localStorage, ostomyNetAu */
+/*global angular, localStorage */
 
-var instructionsController = angular.module('instructionsController', [])
-    .controller('InstructionsController', [function () {
+angular.module('instructionsController', ['rememberService'])
+    .controller('InstructionsController', ['remember', function (remember) {
         'use strict';
         this.remember = function (propertyName, value) {
-            this[propertyName] = value === undefined ? '' : value;
-            localStorage.setItem(propertyName, this[propertyName]);
+            remember.remember(this, propertyName, value);
         };
 
         //Defaults
@@ -13,4 +12,5 @@ var instructionsController = angular.module('instructionsController', [])
             localStorage.setItem('instructionsVisible', 'true');
         }
         this.instructionsVisible = localStorage.getItem('instructionsVisible') === 'true';
+        this.genusText = remember.genus;
     }]);
