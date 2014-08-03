@@ -1,4 +1,4 @@
 /*global angular */
 
 angular.module('ostomyNetAu', [
-    'instructionsController', 'favouritesController', 'stomaApplianceSchemeController', 'myOrderController']);
+    'instructionsController', 'myOrderController', 'favouritesController', 'stomaApplianceSchemeController', 'validityBindFix']);
