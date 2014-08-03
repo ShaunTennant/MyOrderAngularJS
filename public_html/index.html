@@ -76,7 +76,7 @@
                             <label>Email</label>
                         </div>
                         <div class="detailsColumn2">
-                            <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="mc.myOrder.Name" ng-change="mc.myOrder.Name" required validity-bind-fix ng-maxlength="3">
+                            <input id="name" type="text" size="35" tabindex=1 name="name" ng-model="mc.myOrder.Name" ng-change="mc.myOrder.Name" required validity-bind-fix ng-maxlength="64">
                             <span id="nameError" ng-show="mc.myOrder.Name === ''">Required</span>
                             <span id="nameError" ng-show="myOrderForm.name.$error.maxlength">Too long</span><br />
                             <input id="email" type="email" size="35" tabindex=3 name="email" ng-model="mc.myOrder.Email" ng-change="mc.myOrder.Email" required validity-bind-fix ng-maxlength="20">
@@ -89,7 +89,7 @@
                             <label>Ostomy's Email</label>
                         </div>
                         <div class="detailsColumn4">
-                            <input id="memberNumber" type="text" size="10" tabindex=2 name="memberNumber" ng-model="mc.myOrder.MemberNumber" ng-change="mc.myOrder.MemberNumber)" required validity-bind-fix ng-maxlength="3">
+                            <input id="memberNumber" type="text" size="10" tabindex=2 name="memberNumber" ng-model="mc.myOrder.MemberNumber" ng-change="mc.myOrder.MemberNumber)" required validity-bind-fix ng-maxlength="16">
                             <span id="memberNumberError" ng-show="mc.myOrder.MemberNumber === ''">Required</span>
                             <span id="memberNumberError" ng-show="myOrderForm.memberNumber.$error.maxlength">Too long</span><br />
                             <input id="ostomysEmail" type="email" size="35" tabindex=4 name="ostomysEmail" ng-model="mc.myOrder.OstomysEmail" ng-change="mc.myOrder.OstomysEmail" required validity-bind-fix ng-maxlength="128">

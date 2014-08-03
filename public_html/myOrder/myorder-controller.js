@@ -3,11 +3,6 @@
 angular.module('myOrderController', [])
     .controller('MyOrderController', [function () {
         'use strict';
-        this.remember = function (propertyName, value) {
-            this[propertyName] = value === undefined ? '' : value;
-            localStorage.setItem(propertyName, this[propertyName]);
-        };
-
         //Default)s)
         if (localStorage.getItem('myOrderName') === null) {
             localStorage.setItem('myOrderName', '');
@@ -48,9 +43,4 @@ angular.module('myOrderController', [])
                 localStorage.setItem('myOrderOstomysEmail', (value === undefined || value === null) ? '' : value);
             }
         };
-
-//        this.myOrderName = localStorage.getItem('myOrderName');
-//        this.myOrderEmail = localStorage.getItem('myOrderEmail');
-//        this.myOrderMemberNumber = localStorage.getItem('myOrderMemberNumber');
-//        this.myOrderOstomysEmail = localStorage.getItem('myOrderOstomysEmail');
     }]);
