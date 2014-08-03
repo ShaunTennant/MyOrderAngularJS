@@ -124,9 +124,9 @@
         -->
         <div ng-controller="FavouritesController as fc">
             <h2 id="favouritesHeader">
-                Favourites<span id="favouritesToggle" ng-click="fc.remember('favouritesVisible', !fc.favouritesVisible)">{{fc.favouritesVisible ? 'Hide' : 'Show'}}</span>
+                Favourites<span id="favouritesToggle" ng-click="fc.favourites.Visible = !fc.favourites.Visible">{{fc.favourites.Visible ? 'Hide' : 'Show'}}</span>
             </h2>
-            <div id="favouritesContent" ng-show="fc.favouritesVisible">
+            <div id="favouritesContent" ng-show="fc.favourites.Visible">
                 <table>
                     <thead>
                         <tr>
@@ -146,9 +146,9 @@
         </div>
         <div ng-controller="StomaApplianceSchemeController as sc">
             <h2 id="sasSchemeHeader">
-                Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="sc.remember('stomaApplianceSchemeVisible', !sc.stomaApplianceSchemeVisible)">{{sc.stomaApplianceSchemeVisible ? 'Hide' : 'Show'}}</span>
+                Stoma Appliance Scheme<span id="sasSchemeToggle" ng-click="sc.stomaApplianceScheme.Visible = !sc.stomaApplianceScheme.Visible">{{sc.stomaApplianceScheme.Visible ? 'Hide' : 'Show'}}</span>
             </h2>
-            <div id="sasSchemeContent" ng-show="sc.stomaApplianceSchemeVisible">
+            <div id="sasSchemeContent" ng-show="sc.stomaApplianceScheme.Visible">
                 <fieldset id="filters">
                     <legend>Filters</legend>
                 </fieldset>

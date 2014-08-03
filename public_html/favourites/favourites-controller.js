@@ -1,16 +1,20 @@
-/*global angular, localStorage, ostomyNetAu */
+/*global angular, localStorage */
 
-var favouritesController = angular.module('favouritesController', [])
+angular.module('favouritesController', [])
     .controller('FavouritesController', [function () {
         'use strict';
-        this.remember = function (propertyName, value) {
-            this[propertyName] = value;
-            localStorage.setItem(propertyName, this[propertyName]);
-        };
 
         //Defaults
         if (localStorage.getItem('favouritesVisible') === null) {
             localStorage.setItem('favouritesVisible', 'true');
         }
-        this.favouritesVisible = localStorage.getItem('favouritesVisible') === 'true';
+
+        this.favourites = {
+            get Visible() {
+                return localStorage.getItem('favouritesVisible') === 'true';
+            },
+            set Visible(value) {
+                localStorage.setItem('favouritesVisible', value);
+            }
+        };
     }]);

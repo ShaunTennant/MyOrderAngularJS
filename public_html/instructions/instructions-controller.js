@@ -1,13 +1,10 @@
 /*global angular, localStorage */
 
-angular.module('instructionsController', ['rememberService'])
-    .controller('InstructionsController', ['remember', function (remember) {
+angular.module('instructionsController', [])
+    .controller('InstructionsController', [function () {
         'use strict';
-        this.remember = function (propertyName, value) {
-            remember.remember(this, propertyName, value);
-        };
 
-        //Defaults
+        //Default(s)
         if (localStorage.getItem('instructionsVisible') === null) {
             localStorage.setItem('instructionsVisible', 'true');
         }
@@ -20,5 +17,4 @@ angular.module('instructionsController', ['rememberService'])
                 localStorage.setItem('instructionsVisible', value);
             }
         };
-
     }]);
