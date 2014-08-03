@@ -11,5 +11,14 @@ angular.module('instructionsController', ['rememberService'])
         if (localStorage.getItem('instructionsVisible') === null) {
             localStorage.setItem('instructionsVisible', 'true');
         }
-        this.instructionsVisible = localStorage.getItem('instructionsVisible') === 'true';
+
+        this.instructions = {
+            get Visible() {
+                return localStorage.getItem('instructionsVisible') === 'true';
+            },
+            set Visible(value) {
+                localStorage.setItem('instructionsVisible', value);
+            }
+        };
+
     }]);

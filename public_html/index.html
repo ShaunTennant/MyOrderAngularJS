@@ -26,9 +26,9 @@
         </div>
         <div ng-controller="InstructionsController as ic">
             <h2 id="instructionsHeader">
-                Instructions<span id="instructionsToggle" ng-click="ic.remember('instructionsVisible', !ic.instructionsVisible)">{{ic.instructionsVisible ? "Hide" : "Show"}}</span>
+                Instructions<span id="instructionsToggle" ng-click="ic.instructions.Visible = !ic.instructions.Visible">{{ic.instructions.Visible ? "Hide" : "Show"}}</span>
             </h2>
-            <div id="instructionsContent" ng-show="ic.instructionsVisible">
+            <div id="instructionsContent" ng-show="ic.instructions.Visible">
                 <p>
                     This web site allows you to create an order for supplies from the Stoma Appliance Scheme that you email to your ostomy association.
                 </p>
